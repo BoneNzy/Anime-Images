@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag N Drop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Script -->
+    <script src="./script.js"async defer></script>
+</head>
+<body class="dark:bg-slate-800">
+    <div class="container mt-6 mx-auto bg-sky-200 child:bg-orange-200 p-4 text-center child:p-4 child:m-2">
+        <p id="box1" class="draggable" draggable="true">o</p>
+        <p id="box2" class="draggable" draggable="true">o</p>
+    </div>
+    <div class="container mt-6 mx-auto bg-sky-200 child:bg-green-300 p-4 text-center child:p-4 child:m-2">
+        <p id="box3" class="draggable" draggable="true">o</p>
+        <p id="box4" class="draggable" draggable="true">o</p>
+    </div>
+    <!-- container for one image -->
+    <div class="useApi my-2 w-full">
+        <img class="w-96 mx-auto" id="myApiImage" src="" alt="neko-chan">
+    </div>
+
+    <!-- container for multiple pics -->
+    <div id="multiPicContainer" class="multiPicContainer grid grid-cols-3 gap-4"></div>
+
+</body>
+</html>
