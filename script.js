@@ -73,8 +73,8 @@ let manyPic = async () => {
             let multiPic = document.createElement('div');
 
             multiPic.innerHTML +=`
-            <div class="border-4 border-solid border-slate-400 rounded-lg">
-                <img src="${allData["files"][randomIndex]}" alt="waifu">
+            <div class="">
+                <img class="border-2 border-solid border-slate-400 rounded-lg" src="${allData["files"][randomIndex]}" alt="waifu">
             </div>`;
 
             multiPicContainer.appendChild(multiPic);

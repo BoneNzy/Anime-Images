@@ -13,12 +13,16 @@
 <body class="dark:bg-slate-800">
     <div class="container mt-6 mx-auto bg-sky-200 child:bg-orange-200 p-4 text-center child:p-4 child:m-2">
         <p id="box1" class="draggable" draggable="true">o</p>
-        <p id="box2" class="draggable" draggable="true">o</p>
     </div>
     <div class="container mt-6 mx-auto bg-sky-200 child:bg-green-300 p-4 text-center child:p-4 child:m-2">
-        <p id="box3" class="draggable" draggable="true">o</p>
-        <p id="box4" class="draggable" draggable="true">o</p>
+        <p id="box2" class="draggable" draggable="true">o</p>
     </div>
+
+    <div class="text-center m-4 child:rounded-md child:p-1">
+        <input class="border-2 border-solid border-blue-300" type="text" name="type" id="">
+        <input class="border-2 border-solid border-blue-300" type="text" name="genre" id="">
+    </div>
+
     <!-- container for one image -->
     <div class="useApi my-2 w-full">
         <img class="w-96 mx-auto" id="myApiImage" src="" alt="neko-chan">
@@ -27,7 +31,7 @@
     <!-- container for multiple pics -->
     <div id="multiPicContainer" class="multiPicContainer grid grid-cols-2 gap-4 lg:grid-cols-3"></div>
 
-        <!-- Refresh Button -->
+    <!-- Refresh Button -->
     <button
     onclick="window.location.reload();"
     class="fixed bottom-4 right-10 bg-[#90e1a8] p-3 rounded-lg text-gray-600 shadow-lg">
