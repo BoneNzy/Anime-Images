@@ -52,8 +52,6 @@ let manyPic = async () => {
         },
         body: JSON.stringify({
           title: 'multiple images',
-        //   body: 'bar',
-        //   userId: 1,
         }),
     }
 
@@ -65,7 +63,7 @@ let manyPic = async () => {
     console.log(allData.files[4])
 
         Object.keys(allData["files"])
-            .slice(0, 10)
+            .slice(0, 12)
             .map(() => {
 
             //  Random Index for event array
@@ -74,8 +72,8 @@ let manyPic = async () => {
             // a container for multi image
             let multiPic = document.createElement('div');
 
-            multiPic.innerHTML =`
-            <div class="border-4 border-solid border-slate-400 rounded-xl">
+            multiPic.innerHTML +=`
+            <div class="border-4 border-solid border-slate-400 rounded-lg">
                 <img src="${allData["files"][randomIndex]}" alt="waifu">
             </div>`;
 
