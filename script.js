@@ -21,15 +21,6 @@ containers.forEach(containers => {
     });
 });
 
-function positionTheElement(containers, y) {
-    const draggableElements = [...containers.querySelectorAll('.draggables:not(.dragging)')];
-
-    draggableElements.reduce((closest, child) => {
-        const box = child.getBoundingClientRect()
-        console.log(box)
-    }, { offset: Number.POSITIVE_INFINITY })
-}
-
 // ******* For fetching Waifu API ********
 
 const Image = document.querySelector('img')
@@ -40,7 +31,8 @@ myUrl.then((response) => {
     return response.json()
 }).then((response) => {
     Image.src = response.url
-})
+});
+
 
 // many Pics
 
@@ -55,22 +47,41 @@ let manyPic = async () => {
         }),
     }
 
-    var myUrl2 = ("https://api.waifu.pics/many/sfw/neko");
+        // ******* Search Activity ********
+        const getType = document.getElementById("type");
+        const getGenre = document.getElementById("genre");
+        const viewBtn = document.getElementById("btn");
 
-    const response = await fetch(myUrl2, options);
-    const allData = await response.json();
+        var myUrl2 = (`https://api.waifu.pics/many/sfw/waifu`);
 
-    console.log(allData.files[4])
+        var multiPic = document.createElement('div');
+        multiPic.className = "multiPicContainer grid grid-cols-2 gap-4 lg:grid-cols-3"
+
+        viewBtn.addEventListener('click', () => {
+            console.log(getType.value)
+            console.log(myUrl2)
+
+            myUrl2 = `https://api.waifu.pics/many/${getType.value}/${getGenre.value}`
+            console.log(myUrl2)
+
+            manyPic();
+        });
+
+
+        const response = await fetch(myUrl2, options);
+        const allData = await response.json();
+
+        // console.log(myUrl2)
+        multiPic.innerHTML = ``;
 
         Object.keys(allData["files"])
-            .slice(0, 12)
-            .map(() => {
+        .slice(0, 12)
+        .map(() => {
 
             //  Random Index for event array
             let randomIndex = Math.floor(Math.random() * Object.keys(allData["files"]).length);
 
             // a container for multi image
-            let multiPic = document.createElement('div');
 
             multiPic.innerHTML +=`
             <div class="">
@@ -78,8 +89,9 @@ let manyPic = async () => {
             </div>`;
 
             multiPicContainer.appendChild(multiPic);
-            console.log(multiPic)
         });
-    };
+        console.log(multiPic)
+
+};
 
 manyPic();

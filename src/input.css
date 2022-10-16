@@ -10,3 +10,13 @@ body {
 .draggable.dragging {
     opacity: .5;
 }
+
+/* Hover */
+#btn:hover {
+    box-shadow: 1px 1px 6px gray;
+}
+
+/* transitions */
+#btn:active {
+    transform: translateY(1.5px);
+}
