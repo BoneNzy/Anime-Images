@@ -47,12 +47,14 @@ let manyPic = async () => {
         }),
     }
 
+    var myUrl2 = (`https://api.waifu.pics/many/sfw/waifu`);
+    console.log(myUrl2)
+
         // ******* Search Activity ********
         const getType = document.getElementById("type");
         const getGenre = document.getElementById("genre");
         const viewBtn = document.getElementById("btn");
 
-        var myUrl2 = (`https://api.waifu.pics/many/sfw/waifu`);
 
         var multiPic = document.createElement('div');
         multiPic.className = "multiPicContainer grid grid-cols-2 gap-4 lg:grid-cols-3"
@@ -61,8 +63,7 @@ let manyPic = async () => {
             console.log(getType.value)
             console.log(myUrl2)
 
-            myUrl2 = `https://api.waifu.pics/many/${getType.value}/${getGenre.value}`
-            console.log(myUrl2)
+            myUrl2 = new Request(`https://api.waifu.pics/many/${getType.value}/${getGenre.value}`);
 
             manyPic();
         });
@@ -70,6 +71,7 @@ let manyPic = async () => {
 
         const response = await fetch(myUrl2, options);
         const allData = await response.json();
+        console.table(allData);
 
         // console.log(myUrl2)
         multiPic.innerHTML = ``;
@@ -79,13 +81,13 @@ let manyPic = async () => {
         .map(() => {
 
             //  Random Index for event array
-            let randomIndex = Math.floor(Math.random() * Object.keys(allData["files"]).length);
+            let randomIndex = ~~(Math.random() * Object.keys(allData["files"]).length); // ~~ is used instead of Math.floor()
 
             // a container for multi image
-
             multiPic.innerHTML +=`
             <div class="">
-                <img class="border-2 border-solid border-slate-400 rounded-lg" src="${allData["files"][randomIndex]}" alt="waifu">
+                <img class="border-2 border-solid border-slate-400 rounded-lg"
+                src="${allData["files"][randomIndex]}" alt="waifu">
             </div>`;
 
             multiPicContainer.appendChild(multiPic);
