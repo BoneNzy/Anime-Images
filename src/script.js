@@ -57,7 +57,7 @@ let manyPic = async () => {
 
 
         var multiPic = document.createElement('div');
-        multiPic.className = "multiPicContainer grid grid-cols-2 gap-3";
+        multiPic.className = "multiPicContainer grid grid-cols-1 gap-3 lg:grid-cols-2";
 
         viewBtn.addEventListener('click', () => {
             console.log(getType.value)
