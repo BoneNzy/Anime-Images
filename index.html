@@ -8,46 +8,72 @@
 
     <link rel="stylesheet" href="style.css">
     <!-- Script -->
-    <script src="./script.js"async defer></script>
+    <script src="./src/script.js"async defer></script>
 </head>
 <body class="dark:bg-slate-800">
-    <div class="container mt-6 mx-auto bg-sky-200 child:bg-orange-200 p-4 text-center child:p-4 child:m-2">
+
+    <section class="grid gap-3 grid-cols-2 text-center">
+        <div class="">19c</div>
+        <div class="">23i</div>
+        <div class="">23i</div>
+        <div class="">23i</div>
+        <div class="">23i</div>
+    </section>
+
+
+    <!-- <div class="container mt-6 mx-auto bg-sky-200 child:bg-orange-200 p-4 text-center child:p-4 child:m-2">
         <p id="box1" class="draggable" draggable="true">o</p>
-    </div>
+    </div> -->
     <div class="container mt-6 mx-auto bg-sky-200 child:bg-green-300 p-4 text-center child:p-4 child:m-2">
-        <p id="box2" class="draggable" draggable="true">o</p>
+        <p id="box2" class="draggable" draggable="true"></p>
     </div>
 
+    <!-- Search section -->
     <div class="text-center m-4 child:m-2 child:rounded-md child:">
         <input
-            type="text" name="type" id="type" placeholder="sfw"
+            type="text"
+            name="type"
+            id="type"
+            placeholder="sfw"
             class="p-1 border-2 border-solid border-blue-300 focus:outline-none focus:ring-blue-300 focus:border-blue-300
-        ">
+        "/>
+
         <input
-            type="text" name="genre" id="genre" placeholder="neko/waifu/..."
+            type="text"
+            name="genre"
+            id="genre"
+            placeholder="neko/waifu/..."
             class="p-1 border-2 border-solid border-blue-300 focus:outline-none focus:ring-blue-300 focus:border-blue-300
-        ">
+        "/>
         <br>
+
         <button id="btn" class="bg-[#e48965] p-2 px-4 rounded-md text-gray-600 shadow-lg">
             View
         </button>
     </div>
 
+
+
     <!-- container for one image -->
     <div class="useApi my-2 w-full">
-        <img class="w-96 mx-auto" id="myApiImage" src="" alt="neko-chan">
+        <img class="w-72 mx-auto" id="myApiImage" src="" alt="neko-chan">
     </div>
 
+
+
     <!-- container for multiple pics -->
-    <div id="multiPicContainer" class=""></div>
+    <div id="multiImageContainer" class="w-multiContainer m-auto"></div>
+
+
+
 
     <!-- Refresh Button -->
     <button
-    onclick="window.location.reload();"
-    id="btn"
-    class="fixed bottom-4 right-10 bg-[#90e1a8] p-3 rounded-lg text-gray-600 shadow-lg">
+      onclick="window.location.reload();"
+      id="btn"
+      class="fixed bottom-4 right-10 bg-[#90e1a8] p-3 rounded-lg text-gray-600 shadow-lg">
         Update Images
-      </button>
+    </button>
 
 </body>
 </html>

@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./*{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        'multiContainer': '58rem'
+      }
+    },
   },
   plugins: [
     function ({ addVariant }) {

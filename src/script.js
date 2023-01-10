@@ -1,6 +1,6 @@
 const draggables = document.querySelectorAll('.draggable');
 const containers = document.querySelectorAll('.container');
-const multiPicContainer = document.getElementById('multiPicContainer');
+const multiPicContainer = document.getElementById('multiImageContainer');
 
 draggables.forEach(draggables => {
     draggables.addEventListener('dragstart', () => {
@@ -57,7 +57,7 @@ let manyPic = async () => {
 
 
         var multiPic = document.createElement('div');
-        multiPic.className = "multiPicContainer grid grid-cols-2 gap-4 lg:grid-cols-3"
+        multiPic.className = "multiPicContainer grid grid-cols-2 gap-3";
 
         viewBtn.addEventListener('click', () => {
             console.log(getType.value)
@@ -77,18 +77,21 @@ let manyPic = async () => {
         multiPic.innerHTML = ``;
 
         Object.keys(allData["files"])
-        .slice(0, 12)
+        .slice(0, 6)
         .map(() => {
 
             //  Random Index for event array
             let randomIndex = ~~(Math.random() * Object.keys(allData["files"]).length); // ~~ is used instead of Math.floor()
 
             // a container for multi image
+            // border-2 border-solid border-slate-400 rounded-lg
             multiPic.innerHTML +=`
-            <div class="">
-                <img class="border-2 border-solid border-slate-400 rounded-lg"
-                src="${allData["files"][randomIndex]}" alt="waifu">
-            </div>`;
+                <div class="border-2 border-solid border-slate-600 rounded-lg">
+                  <img class=""
+                    src="${allData["files"][randomIndex]}"
+                    alt="waifu"
+                  />
+                </div>`;
 
             multiPicContainer.appendChild(multiPic);
         });
